@@ -4,10 +4,273 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
+    <title>Resume</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <link rel="stylesheet" href="./css/style.css" />
+
+    <script src="./js/main.js"></script>
   </head>
   <body>
-    <div id="app"></div>
-    <script type="module" src="./js/main.js"></script>
+    <main id="pdf">
+      <img src="img/profileImg.svg" />
+      <section class="name">
+        <p class="f-size-10">Hello 👋🏻 I'm</p>
+        <div>
+          <p contenteditable class="f-size-14 f-weight-600" rows="1">
+            Karthik SR
+          </p>
+          <p contenteditable class="f-size-12 profession" rows="1">
+            UX/UI Designer
+          </p>
+        </div>
+      </section>
+      <section class="languages">
+        <h3>Languages</h3>
+        <div class="language">
+          <p contenteditable>English</p>
+          <div
+            class="progress-container"
+            onmousedown="moveProgressBar(event, 'progressBar1')"
+          >
+            <div
+              class="progress-bar"
+              id="progressBar1"
+              style="width: 100%"
+            ></div>
+          </div>
+        </div>
+        <div class="language">
+          <p contenteditable>Malayalam</p>
+          <div
+            class="progress-container"
+            onmousedown="moveProgressBar(event, 'progressBar2')"
+          >
+            <div
+              class="progress-bar"
+              id="progressBar2"
+              style="width: 55%"
+            ></div>
+          </div>
+        </div>
+        <div class="language">
+          <p contenteditable>Hindi</p>
+          <div
+            class="progress-container"
+            onmousedown="moveProgressBar(event, 'progressBar3')"
+          >
+            <div
+              class="progress-bar"
+              id="progressBar3"
+              style="width: 100%"
+            ></div>
+          </div>
+        </div>
+      </section>
+      <section class="experience">
+        <h3>Experience</h3>
+        <div class="experience-info">
+          <div class="date">
+            <p contenteditable>Jun. 2023 - Present</p>
+            <span>most recent</span>
+          </div>
+          <div class="main-info">
+            <div>
+              <p contenteditable class="job">Marketing Manager</p>
+              <p contenteditable class="f-weight-400">Pankayam | Full-time</p>
+            </div>
+            <ul class="f-weight-400">
+              <li>
+                <p contenteditable>
+                  Strategy development and planning of campaigns that promote
+                  the business and generate genuine traffic
+                </p>
+              </li>
+              <li>
+                <p contenteditable>
+                  SEO Content Creation for Blogs, Website, Social media
+                </p>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="experience-info">
+          <div class="date">
+            <p contenteditable>2017 - Present</p>
+          </div>
+          <div class="main-info">
+            <div>
+              <p contenteditable class="job">Graphic / Web designer</p>
+              <p contenteditable class="f-weight-400">Freelance</p>
+            </div>
+            <ul class="f-weight-400">
+              <li>
+                <p contenteditable>
+                  Development of internal projects from scratch, product design
+                  of brands
+                </p>
+              </li>
+              <li>
+                <p contenteditable>Landing page, webapps and hybrid apps</p>
+              </li>
+              <li>
+                <p contenteditable>
+                  Coordinating with outside agencies, art services, web
+                  designer, marketing, printers, and colleagues as necessary.
+                </p>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="experience-info">
+          <div class="date">
+            <p contenteditable>Sep. 2021 - Jun. 2023</p>
+          </div>
+          <div class="main-info">
+            <div>
+              <p contenteditable class="job">Legal Assistant</p>
+              <p contenteditable class="f-weight-400">Law Firm | Intern</p>
+            </div>
+            <ul class="f-weight-400">
+              <li>
+                <p contenteditable>
+                  Provide administrative support to lawyer and enhance office
+                  effectiveness
+                </p>
+              </li>
+              <li>
+                <p contenteditable>
+                  Handle communication with clients, witnesses etc.
+                </p>
+              </li>
+              <li>
+                <p contenteditable>
+                  repare case briefs and summarize depositions, interrogatories
+                  and testimony
+                </p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <section class="tools">
+        <h3>Tools</h3>
+        <div class="tool-items">
+          <h4>design</h4>
+          <div class="tools-list">
+            <img class="tool" src="img/logoFigma.svg" />
+            <img class="tool" src="img/icon_adobe_photoshop_.svg" />
+            <img class="tool" src="img/icon_adobe_illustrator.svg" />
+            <img class="tool" src="img/icon_adobe_premiere_.svg" />
+            <img class="tool" src="img/logoNotion.svg" />
+            <img class="tool" src="img/logoMeet.svg" />
+          </div>
+        </div>
+        <div class="tool-items">
+          <h4>no-code</h4>
+          <div class="tools-list">
+            <img class="tool" src="img/logoZapier.svg" />
+            <img class="tool" src="img/logoWebflow.svg" />
+            <img class="tool" src="img/logoFramer.svg" />
+            <img class="tool" src="img/logoWordpress.svg" />
+          </div>
+        </div>
+        <div class="tool-items">
+          <h4>artoficial intelligence</h4>
+          <div class="tools-list">
+            <img class="tool" src="img/logoChatGPT.svg" />
+            <img class="tool" src="img/logoCopilot.svg" />
+            <img class="tool" src="img/logoMidjourney.svg" />
+          </div>
+        </div>
+      </section>
+      <section class="education f-size-10">
+        <h3>Education</h3>
+        <div class="education-list">
+          <div class="education-item">
+            <div class="year-and-heart">
+              <p contenteditable>2023</p>
+              <img src="img/heart.svg" />
+            </div>
+            <p contenteditable>UI/UX</p>
+            <div class="hashtags">
+              <p contenteditable>#UX</p>
+              <p contenteditable>#UI</p>
+              <p contenteditable>#research</p>
+              <p contenteditable>#Ui</p>
+              <p contenteditable>#DesignSystem</p>
+              <p contenteditable>#wireframing</p>
+              <p contenteditable>#figma</p>
+              <p contenteditable>#Ux</p>
+            </div>
+            <p contenteditable rows="1" class="f-size-8 f-weight-400">
+              Coursera
+            </p>
+          </div>
+          <div class="education-item">
+            <div class="year-and-heart">
+              <p contenteditable>2017 - 2022</p>
+            </div>
+            <p contenteditable>Law</p>
+            <div class="hashtags">
+              <p contenteditable>#law</p>
+              <p contenteditable>#legalStudies</p>
+              <p contenteditable>#contracts</p>
+              <p contenteditable>#internationalLaws</p>
+            </div>
+            <p contenteditable class="f-size-8 f-weight-400">
+              University of Kerala
+            </p>
+          </div>
+          <div class="education-item">
+            <div class="year-and-heart">
+              <p contenteditable>2017</p>
+            </div>
+            <p contenteditable>Graphic design</p>
+            <div class="hashtags">
+              <p contenteditable>#branding</p>
+              <p contenteditable>#web</p>
+              <p contenteditable>#illustration</p>
+              <p contenteditable>#adobe</p>
+            </div>
+            <p contenteditable class="f-size-8 f-weight-400">
+              University of Kerala
+            </p>
+          </div>
+        </div>
+      </section>
+      <div class="interests-and-email">
+        <section class="interests">
+          <h3>Interests</h3>
+          <div class="interests-list">
+            <p contenteditable>branding</p>
+            <p contenteditable>design</p>
+            <p contenteditable>photography</p>
+            <p contenteditable>artificial intelligence</p>
+            <p contenteditable>illustration</p>
+            <p contenteditable>typography</p>
+            <p contenteditable>social networks</p>
+            <p contenteditable>research</p>
+            <p contenteditable>dron pilot</p>
+            <p contenteditable>games</p>
+          </div>
+        </section>
+        <section class="email">
+          <p contenteditable class="f-size-14">
+            Let´s chat! I´m ready to work on excinting projects
+          </p>
+          <p contenteditable class="f-size-10 f-weight-400">
+            srkarthik.designscape@gmail.com
+          </p>
+        </section>
+      </div>
+    </main>
+    <button onclick="downloadPDF()">Download Pdf</button>
   </body>
 </html>

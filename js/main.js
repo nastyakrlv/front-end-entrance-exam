@@ -1,24 +1,18 @@
-import '../css/style.css'
-import javascriptLogo from '../javascript.svg'
-import viteLogo from '/vite.svg'
-import { setupCounter } from './counter.js'
+function moveProgressBar(event, progressBarID) {
+  var progressBar = document.getElementById(progressBarID);
+  var containerWidth = event.currentTarget.offsetWidth;
+  var clickPosition = event.clientX - event.currentTarget.offsetLeft;
+  var progressWidth = (clickPosition / containerWidth) * 100;
+  progressBar.style.width = progressWidth + "%";
+}
 
-document.querySelector('#app').innerHTML = `
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="${viteLogo}" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">
-      <img src="${javascriptLogo}" class="logo vanilla" alt="JavaScript logo" />
-    </a>
-    <h1>Hello Vite!</h1>
-    <div class="card">
-      <button id="counter" type="button"></button>
-    </div>
-    <p class="read-the-docs">
-      Click on the Vite logo to learn more
-    </p>
-  </div>
-`
+function downloadPDF() {
+  var opt = {
+    filename: "resume.pdf",
+    image: { type: "jpeg", quality: 0.98 },
+    html2canvas: { scrollX: 0, scrollY: 0, scale: 2 },
+    jsPDF: { unit: "in", format: "letter", orientation: "portrait" },
+  };
 
-setupCounter(document.querySelector('#counter'))
+  html2pdf().set(opt).from(document.getElementById("pdf")).save();
+}
